@@ -1,0 +1,35 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, ShieldCheck, HeartHandshake, Factory } from 'lucide-react';
+import { HERO, PILLARS, SOCIAL } from '../content';
+
+const icons = [Factory, ShieldCheck, HeartHandshake];
+
+export default function Home() {
+  return (
+    <main>
+      <section className="relative overflow-hidden bg-[#1c2b62] text-white">
+        <div className="absolute inset-0 opacity-20"><img src="/src/assets/politica.webp" alt="" className="h-full w-full object-cover" /></div>
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-[1.1fr_.9fr] md:py-28">
+          <div>
+            <p className="mb-6 text-xs font-bold uppercase tracking-[.28em] text-[#ffe900]">{HERO.eyebrow}</p>
+            <h1 className="font-display text-5xl font-black leading-[1.04] md:text-7xl">{HERO.title}</h1>
+            <p className="mt-7 max-w-2xl text-xl leading-relaxed text-white/80">{HERO.description}</p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link to="/quien-soy" className="inline-flex items-center gap-2 bg-[#ffe900] px-6 py-4 font-bold text-[#1c2b62] hover:bg-white">Conocé a Ariana <ArrowRight size={18} /></Link>
+              <Link to="/sumate" className="inline-flex items-center gap-2 border border-white/50 px-6 py-4 font-bold text-white hover:bg-white/10">Sumate <ArrowUpRight size={18} /></Link>
+            </div>
+          </div>
+          <div className="mx-auto w-full max-w-md">
+            <img src="/src/assets/politica.webp" alt="Ariana Mellao" className="aspect-[4/5] w-full rounded-sm object-cover shadow-2xl" />
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="max-w-3xl"><p className="text-xs font-bold uppercase tracking-[.24em] text-[#1c2b62]">Una agenda para el futuro</p><h2 className="mt-4 font-display text-4xl font-bold text-[#1c2b62] md:text-5xl">Tres compromisos para una nueva etapa</h2></div>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">{PILLARS.map((p, i) => { const Icon = icons[i]; return <article key={p.title} className="border border-gray-200 bg-white p-8"><Icon className="mb-6 text-[#1c2b62]" size={32} /><h3 className="font-display text-2xl font-bold text-[#1c2b62]">{p.title}</h3><p className="mt-4 leading-relaxed text-gray-600">{p.description}</p></article>; })}</div>
+      </section>
+      <section className="bg-[#f0f0eb] px-6 py-16"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center"><div><p className="text-xs font-bold uppercase tracking-[.24em] text-[#1c2b62]">Participación ciudadana</p><h2 className="mt-3 font-display text-3xl font-bold text-[#1c2b62] md:text-4xl">Las transformaciones se construyen entre todos.</h2></div><Link to="/sumate" className="inline-flex shrink-0 items-center gap-2 bg-[#1c2b62] px-6 py-4 font-bold text-white">Participá <ArrowRight size={18} /></Link></div></section>
+      <div className="sr-only"><a href={SOCIAL.twitter.url}>X</a></div>
+    </main>
+  );
+}
