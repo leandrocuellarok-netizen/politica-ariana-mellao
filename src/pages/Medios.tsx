@@ -1,7 +1,2 @@
-import PageLayout from '../components/PageLayout';
-import { MEDIOS } from '../content';
-import { ExternalLink } from 'lucide-react';
-
-export default function Medios() {
-  return <PageLayout title={MEDIOS.pageTitle} label={MEDIOS.pageLabel}><p className="mb-10 text-lg leading-relaxed text-gray-700">{MEDIOS.intro}</p><div className="space-y-4">{MEDIOS.items.map((item, i) => <article key={i} className="border-b border-gray-200 py-5"><p className="text-xs font-bold uppercase tracking-widest text-[#1c2b62]">{item.outlet}</p><h2 className="mt-2 font-display text-2xl font-bold text-gray-900">{item.title}</h2>{item.description && <p className="mt-2 text-gray-600">{item.description}</p>}{item.url && <a className="mt-3 inline-flex items-center gap-2 font-semibold text-[#1c2b62]" href={item.url} target="_blank" rel="noreferrer">Ver publicación <ExternalLink size={15} /></a>}</article>)}</div></PageLayout>;
-}
+import PageLayout from '../components/PageLayout';import { MEDIOS } from '../content';import { ExternalLink } from 'lucide-react';
+export default function Medios(){return <PageLayout title={MEDIOS.pageTitle} label={MEDIOS.pageLabel}><p className="mb-10 text-lg leading-relaxed text-gray-700">{MEDIOS.intro}</p><div className="space-y-4">{MEDIOS.items.map((item,i)=><article key={i} className="border-b border-gray-200 py-5"><p className="text-xs font-bold uppercase tracking-widest text-[#1c2b62]">{item.outlet}</p><h2 className="mt-2 font-display text-2xl font-bold text-gray-900">{item.title}</h2>{item.description&&<p className="mt-2 text-gray-600">{item.description}</p>}{item.url&&<a className="mt-3 inline-flex items-center gap-2 font-semibold text-[#1c2b62]" href={item.url} target="_blank" rel="noreferrer">Ver publicación <ExternalLink size={15}/></a>}</article>)}</div></PageLayout>}
