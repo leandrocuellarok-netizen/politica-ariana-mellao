@@ -1,3 +1,45 @@
-import { Link } from 'react-router-dom';import { ArrowRight,ArrowUpRight,ShieldCheck,HeartHandshake,Building2 } from 'lucide-react';import { HERO,PILLARS } from '../content';
-const icons=[Building2,ShieldCheck,HeartHandshake];
-export default function Home(){return <main><section className="relative isolate overflow-hidden bg-[#14233b] text-white"><div className="absolute inset-0 -z-10"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=85" alt="" className="h-full w-full object-cover opacity-20"/><div className="absolute inset-0 bg-gradient-to-r from-[#14233b] via-[#14233b]/95 to-[#14233b]/65"/></div><div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-[1.1fr_.9fr] md:py-32"><div><p className="mb-7 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[.28em] text-[#d9b56d]"><span className="h-px w-8 bg-[#d9b56d]"/>{HERO.eyebrow}</p><h1 className="max-w-3xl font-display text-5xl font-semibold leading-[1.08] md:text-7xl">{HERO.title}</h1><p className="mt-8 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">{HERO.description}</p><div className="mt-10 flex flex-wrap gap-4"><Link to="/quien-soy" className="inline-flex items-center gap-3 bg-[#d9b56d] px-7 py-4 text-sm font-bold text-[#14233b] transition hover:bg-[#ead09e]">Conocé a Ariana <ArrowRight size={17}/></Link><Link to="/sumate" className="inline-flex items-center gap-3 border border-white/35 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10">Participá <ArrowUpRight size={17}/></Link></div></div><div className="relative hidden md:block"><div className="absolute -inset-5 border border-[#d9b56d]/60"/><img src="/ariana-mellao.jpg" alt="Ariana Mellao" className="relative aspect-[4/5] w-full object-cover opacity-90"/><div className="absolute -bottom-5 -left-5 bg-[#d9b56d] px-6 py-5 text-[#14233b]"><p className="text-[10px] font-bold uppercase tracking-[.2em]">Rada Tilly</p><p className="mt-1 font-display text-2xl font-bold">Futuro 2027</p></div></div></div><div className="h-1 bg-[#d9b56d]"/></section><section className="mx-auto max-w-7xl px-6 py-24 md:py-28"><div className="max-w-3xl"><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#a17b3d]">Ejes de trabajo</p><h2 className="mt-5 font-display text-4xl font-semibold leading-tight text-[#14233b] md:text-5xl">Una agenda pública con prioridades claras.</h2><p className="mt-5 max-w-2xl text-lg leading-8 text-gray-600">Ideas para una ciudad que crece, cuida sus instituciones y pone a sus vecinos en el centro.</p></div><div className="mt-14 grid gap-5 md:grid-cols-3">{PILLARS.map((p,i)=>{const Icon=icons[i];return <article key={p.title} className="group border border-[#e6e1d8] bg-white p-8 transition hover:-translate-y-1 hover:shadow-xl"><span className="text-xs font-bold tracking-[.2em] text-[#b08c52]">0{i+1}</span><Icon className="my-7 text-[#a17b3d]" size={32}/><h3 className="font-display text-2xl font-semibold text-[#14233b]">{p.title}</h3><p className="mt-4 leading-7 text-gray-600">{p.description}</p></article>})}</div></section><section className="bg-[#f0ede6] px-6 py-20"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center"><div><p className="text-[11px] font-bold uppercase tracking-[.24em] text-[#a17b3d]">Participación ciudadana</p><h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold text-[#14233b] md:text-4xl">Las buenas ideas necesitan una comunidad que las impulse.</h2></div><Link to="/sumate" className="inline-flex shrink-0 items-center gap-3 bg-[#14233b] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#263c60]">Sumate <ArrowRight size={17}/></Link></div></section></main>}
+import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, ShieldCheck, HeartHandshake, Building2, Instagram } from 'lucide-react';
+import { HERO, PILLARS } from '../content';
+
+const icons = [Building2, ShieldCheck, HeartHandshake];
+const instagramUrl = 'https://www.instagram.com/reel/DdQFwP2CSRL/';
+
+export default function Home() {
+  return (
+    <main>
+      <section className="relative isolate overflow-hidden bg-[#14233b] text-white">
+        <div className="absolute inset-0 -z-10">
+          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=85" alt="" className="h-full w-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#14233b] via-[#14233b]/95 to-[#14233b]/65" />
+        </div>
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-[1.1fr_.9fr] md:py-28">
+          <div>
+            <p className="mb-7 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[.28em] text-[#d9b56d]"><span className="h-px w-8 bg-[#d9b56d]" />{HERO.eyebrow}</p>
+            <h1 className="max-w-3xl font-display text-5xl font-semibold leading-[1.08] md:text-7xl">{HERO.title}</h1>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">{HERO.description}</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link to="/quien-soy" className="inline-flex items-center gap-3 bg-[#d9b56d] px-7 py-4 text-sm font-bold text-[#14233b] transition hover:bg-[#ead09e]">Conocé a Ariana <ArrowRight size={17} /></Link>
+              <Link to="/sumate" className="inline-flex items-center gap-3 border border-white/35 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10">Participá <ArrowUpRight size={17} /></Link>
+            </div>
+          </div>
+          <div className="mx-auto w-full max-w-md">
+            <div className="overflow-hidden border border-[#d9b56d]/60 bg-black shadow-2xl">
+              <div className="aspect-[9/16] w-full">
+                <iframe src="https://www.instagram.com/reel/DdQFwP2CSRL/embed" title="Ariana Mellao en Instagram" className="h-full w-full border-0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen loading="lazy" />
+              </div>
+            </div>
+            <a href={instagramUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex w-full items-center justify-center gap-3 bg-[#d9b56d] px-6 py-4 text-sm font-bold text-[#14233b] transition hover:bg-[#ead09e]"><Instagram size={18} /> Ver video de Ariana en Instagram <ArrowUpRight size={17} /></a>
+            <div className="mt-4 text-center text-xs tracking-wide text-white/60">Si Instagram no permite reproducirlo aquí, abrilo directamente en la plataforma.</div>
+          </div>
+        </div>
+        <div className="h-1 bg-[#d9b56d]" />
+      </section>
+      <section className="mx-auto max-w-7xl px-6 py-24 md:py-28">
+        <div className="max-w-3xl"><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#a17b3d]">Ejes de trabajo</p><h2 className="mt-5 font-display text-4xl font-semibold leading-tight text-[#14233b] md:text-5xl">Una agenda pública con prioridades claras.</h2><p className="mt-5 max-w-2xl text-lg leading-8 text-gray-600">Ideas para una ciudad que crece, cuida sus instituciones y pone a sus vecinos en el centro.</p></div>
+        <div className="mt-14 grid gap-5 md:grid-cols-3">{PILLARS.map((p, i) => { const Icon = icons[i]; return <article key={p.title} className="group border border-[#e6e1d8] bg-white p-8 transition hover:-translate-y-1 hover:shadow-xl"><span className="text-xs font-bold tracking-[.2em] text-[#b08c52]">0{i + 1}</span><Icon className="my-7 text-[#a17b3d]" size={32} /><h3 className="font-display text-2xl font-semibold text-[#14233b]">{p.title}</h3><p className="mt-4 leading-7 text-gray-600">{p.description}</p></article>; })}</div>
+      </section>
+      <section className="bg-[#f0ede6] px-6 py-20"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center"><div><p className="text-[11px] font-bold uppercase tracking-[.24em] text-[#a17b3d]">Participación ciudadana</p><h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold text-[#14233b] md:text-4xl">Las buenas ideas necesitan una comunidad que las impulse.</h2></div><Link to="/sumate" className="inline-flex shrink-0 items-center gap-3 bg-[#14233b] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#263c60]">Sumate <ArrowRight size={17} /></Link></div></section>
+    </main>
+  );
+}
